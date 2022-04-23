@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class loginpages {
 
+	
+
 	private WebDriver driver;
 	
 	private By emailid = By.id("email");
@@ -31,4 +33,12 @@ public class loginpages {
 	public void clickOnLogin() {
 	    driver.findElement (Singin).click();
 	}
-}
+	
+	 public accountpage doLogin(String un, String pwd) {
+		 System.out.println("login with:"+ un + "and"+ pwd);
+		 driver.findElement (emailid). sendKeys (un);
+		 driver.findElement (password).sendKeys (pwd);
+		 driver.findElement(Singin).click();
+		 return new accountpage(driver);
+
+}}
